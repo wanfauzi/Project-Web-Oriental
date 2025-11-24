@@ -1,0 +1,291 @@
+/* All selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffff;
+  border-bottom: 1px solid rgba(241, 255, 47, 0.096);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo img {
+  /*Atur gambar logo kecil dengan rem */
+  width: 3rem;
+  height: auto;
+  border-radius: 50%; /* Membuat gambar logo menjadi bulat */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+}
+
+.navbar .navbar-menu {
+  padding: 10px 18px;
+  list-style: none;
+  display: flex;
+  text-align: center;
+}
+.navbar .navbar-menu li a {
+  color: black;
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-menu li a:hover {
+  color: rgb(4, 184, 233);
+  transition: color 0.2s;
+}
+
+.navbar .navbar-extra a {
+  color: black;
+}
+
+.navbar .navbar-extra a:hover {
+  color: rgb(4, 184, 233);
+}
+
+/* Hamburger menu untuk navbar */
+#hamburger-menu {
+  display: none;
+}
+
+/* Menu main */
+/* Hero section */
+/* ===== Hero / Beranda ===== */
+/* ===== Hero Section ===== */
+
+/* Gambar supaya disebelah kiri dan disebelah kanan ada class content dan ukuran responsif*/
+/* ===== Hero (Base, sebelum media queries) ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; /* jarak aman antar kolom */
+  padding: 7.5rem 5% 1rem; /* kurangi padding samping agar tidak mepet */
+  background-color: #fff;
+  margin-top: 0;
+  flex-wrap: nowrap; /* JANGAN wrap di desktop agar tidak turun baris */
+}
+
+/* Gambar */
+.hero .hero-image {
+  flex: 0 1 46%; /* ± setengah lebar, tidak memaksa */
+  display: flex;
+  justify-content: flex-start;
+}
+.hero .hero-image img {
+  width: 100%;
+  max-width: 450px; /* biarkan mengisi kolomnya */
+  height: auto;
+}
+
+/* Teks */
+.hero .content {
+  flex: 1 1 46%; /* sisa lebar untuk teks */
+}
+.hero .content h2 {
+  font-size: 2.5rem;
+  color: rgba(0, 0, 0, 0.8); /* isi warna yang kosong */
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.hero .content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 520px; /* sedikit longgar agar tidak cepat membungkus */
+}
+.hero .content h2 span {
+  color: rgb(50, 47, 255);
+}
+.hero .btn-pesan {
+  display: inline-block;
+  background-color: #d61c1c;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.hero .btn-pesan:hover {
+  background-color: #b51212;
+}
+
+/* End of Menu main */
+
+/* SECTION TENTANG KAMI */
+
+.tentang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.6rem 7% 1rem 1rem;
+  background-color: #fede59;
+}
+
+.tentang .tentang-image {
+  flex: 0 0 50%; /* ± setengah lebar, tidak memaksa */
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -9%;
+}
+.tentang .tentang-image img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+}
+/* Teks di kanan dengan ruang luas */
+.tentang .teks-tentang {
+  flex: 1 1 60%; /* teks lebih lebar */
+  padding-left: 2rem; /* tambah jarak dari gambar */
+}
+.tentang .teks-tentang h2 {
+  font-size: 2.5rem;
+  color: rgb(50, 47, 255);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.tentang .teks-tentang p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  text-align: justify;
+  max-width: 700px; /* batasi panjang teks biar enak dibaca */
+}
+
+/*  */
+
+/* Media Queries */
+/* Mode desktop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 100%;
+  }
+}
+/* Mode Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-menu.active {
+    right: 0;
+  }
+
+  .navbar .navbar-menu li {
+    padding: 0.5rem;
+    margin: 2rem;
+    font-size: 3rem;
+  }
+  /* Hero section */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 6% 1rem;
+  }
+
+  .hero .hero-image {
+    order: -1;
+    justify-content: center;
+  }
+  .hero .hero-image img {
+    max-width: 300px;
+  }
+  .hero .content p {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .tentang {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 6% 1.5rem;
+  }
+  .tentang .tentang-image {
+    order: -1;
+    justify-content: center;
+    margin-left: 0; /* batalkan efek -9% di desktop */
+  }
+  .tentang .tentang-image img {
+    max-width: 380px;
+  }
+  .tentang .teks-tentang {
+    padding-left: 0;
+  }
+  .tentang .teks-tentang p {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero .hero-image img {
+    max-width: 300px;
+  }
+
+  .hero .content h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Mode mobile */
+@media (max-width: 480px) {
+  html {
+    font-size: 55%;
+  }
+  .hero,
+  .tentang {
+    padding: 3.2rem 6% 1rem;
+    gap: 1rem;
+  }
+  .hero .hero-image img,
+  .tentang .tentang-image img {
+    max-width: 300px;
+  }
+  .hero .content h2,
+  .tentang .teks-tentang h2 {
+    font-size: 1.9rem;
+  }
+  .hero .content p,
+  .tentang .teks-tentang p {
+    font-size: 0.95rem;
+  }
+}
