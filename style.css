@@ -33,6 +33,10 @@ body {
   z-index: 9999;
 }
 
+.navbar .navbar-logo {
+  margin-right: auto;
+}
+
 .navbar .navbar-logo img {
   width: 3.5rem;
   height: 3.5rem;
@@ -46,6 +50,12 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar .navbar-menu li {
+  text-align: center;
 }
 
 .navbar .navbar-menu li a {
@@ -235,53 +245,78 @@ body {
   color: #ffd700;
 }
 
-.produk-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.produk-container {
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 2rem;
+  justify-content: center;
 }
 
 .produk-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 2rem;
+  width: 260px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
 }
 
-.produk-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+/* BOX GAMBAR */
+.produk-gambar {
+  width: 100%;
+  height: 320px; /* Supaya gambar panjang dan tidak terpotong */
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.produk-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #ffd700 0%, #ffc700 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  font-size: 2.5rem;
+/* GAMBAR PRODUK */
+.produk-gambar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Memenuhi kotak sekaligus tetap rapi */
+  display: block;
 }
 
+/* JUDUL */
 .produk-card h3 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: 600;
 }
 
+/* DESKRIPSI */
 .produk-card p {
-  color: #666;
-  line-height: 1.6;
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+/* Harga */
+.produk-card span p {
+  margin-top: 12px;
+  font-size: 1.5rem;
+  color: #ffc700;
+  font-style: italic;
+}
+.produk-button {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.produk .produk-button button {
+  background: #ffc700;
+  padding: 0.7rem 1.7rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 /* Galeri Section */
 .galeri {
-  padding: 5rem 7%;
+  padding: 4rem 7%;
   background: linear-gradient(135deg, #fffacd 0%, #fff8dc 100%);
 }
 
@@ -289,7 +324,7 @@ body {
   text-align: center;
   font-size: 2.8rem;
   color: #333;
-  margin-bottom: 3rem;
+  margin-bottom: 2.3rem;
   font-weight: 700;
 }
 
@@ -299,22 +334,88 @@ body {
 
 .galeri-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  justify-items: center;
 }
 
 .galeri-item {
   position: relative;
-  overflow: hidden;
-  border-radius: 15px;
+  width: 100%;
   height: 300px;
-  background: linear-gradient(135deg, #ffd700 0%, #ffc700 100%);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.2s;
 }
 
 .galeri-item:hover {
   transform: scale(1.05);
   transition: all 0.3s ease;
+}
+.galeri-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Tetap rapi */
+  border-radius: 12px;
+  display: block;
+}
+.galeri-judul {
+  position: absolute;
+  right: 15px; /* geser ke kanan */
+  bottom: 15px; /* geser ke bawah */
+  background: rgba(0, 0, 0, 0.45); /* transparan gelap */
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Testimoni */
+
+.testimoni {
+  padding: 4rem 7%;
+  background: #fffdf3;
+}
+
+.testimoni h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2.3rem;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Grid untuk kartu testimoni */
+.testimoni-grid {
+  display: grid;
+  /* auto-fit + minmax bikin otomatis 3 / 2 / 1 kolom tergantung lebar layar */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Kartu testimoni */
+.testimoni-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 1.6rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 180, 0, 0.25);
+}
+
+.testimoni-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 0.8rem;
+  font-style: italic;
+}
+
+.testimoni-card h3 {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 600;
 }
 
 /* Kontak Section */

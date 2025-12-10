@@ -16,36 +16,66 @@
     <!-- Feathers Icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- CDN Bootstrap dan JQuery -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body>
     <!-- Navbar -->
-    <nav class="navbar">
-      <a href="#" class="navbar-logo">
-        <img src="images/logo.png" alt="Logo Oriental Cap Nyonya" />
-      </a>
-
-      <ul class="navbar-menu" id="navMenu">
-        <li><a href="#Beranda">Beranda</a></li>
-        <li><a href="#TentangKami">Tentang Kami</a></li>
-        <li><a href="#Produk">Produk</a></li>
-        <li><a href="#Galeri">Galeri</a></li>
-        <li><a href="#Kontak">Kontak</a></li>
-      </ul>
-
-      <div class="navbar-extra">
-        <a href="#"><i data-feather="instagram"></i></a>
-        <a href="#"><i data-feather="shopping-cart"></i></a>
-        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="#"
+        ><img
+          src="images/logo.png"
+          alt="Logo Oriental Cap Nyonya"
+          class="img-fluid"
+          style="width: 3.5rem"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#Beranda">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#TentangKami">Tentang Kami</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Produk">Produk</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Galeri">Galeri</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Kontak">Kontak</a>
+          </li>
+        </ul>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="Beranda">
       <div class="hero-image">
-        <img src="images/beranda.png" alt="Limun Oriental Cap Nyonya" />
+        <img
+          src="images/beranda.png"
+          alt="Limun Oriental Cap Nyonya"
+          class="img-fluid"
+        />
       </div>
-
       <div class="content">
         <h2>
           Rasakan Nikmatnya Kesegeran Limun<br /><span
@@ -56,111 +86,126 @@
           Minuman Limun Oriental Cap Nyonya menjadi minuman legendaris khas
           Pekalongan sejak era tahun 1920.
         </p>
-        <a href="#Kontak" class="btn-pesan">Pesan Sekarang</a>
+        <a href="#Kontak" class="btn btn-warning btn-lg">Pesan Sekarang</a>
       </div>
     </section>
 
-    <!-- Tentang Kami -->
-    <section class="tentang" id="TentangKami">
-      <div class="tentang-image">
-        <img src="images/tentangkami.png" alt="Tempat Oriental Cap Nyonya" />
-      </div>
-      <div class="teks-tentang">
-        <h2>Tentang <span>Kami</span></h2>
-        <p>
-          Oriental Cap Nyonya adalah minuman limun legendaris khas Pekalongan
-          yang telah ada sejak tahun 1920. Dengan rasa yang menyegarkan dan cita
-          rasa unik, Oriental Cap Nyonya telah menjadi pilihan favorit bagi
-          banyak orang. Diproduksi dengan bahan-bahan berkualitas tinggi,
-          minuman ini menawarkan pengalaman rasa yang tak terlupakan. Nikmati
-          kesegaran Oriental Cap Nyonya dan rasakan kenikmatan minuman
-          tradisional yang telah diwariskan dari generasi ke generasi.
-        </p>
-      </div>
-    </section>
-
-    <!-- Produk -->
+    <!-- Produk Section -->
     <section class="produk" id="Produk">
-      <h2>Produk <span>Kami</span></h2>
-      <div class="produk-grid">
-        <div class="produk-card">
-          <div class="produk-icon">🍋</div>
-          <h3>Limun Original</h3>
-          <p>
-            Limun dengan rasa original yang menyegarkan, resep turun temurun
-            sejak 1920
-          </p>
+      <h2 class="text-center">Produk <span>Unggulan Kami</span></h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="images/produk oriental jeruk.jpeg"
+              alt="Produk Oriental Jeruk"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Limun Oriental Jeruk</h5>
+              <p class="card-text">Segar citrus dengan manis-asam klasik</p>
+              <span><p>Rp 15.000</p></span>
+            </div>
+          </div>
         </div>
-        <div class="produk-card">
-          <div class="produk-icon">🍊</div>
-          <h3>Limun Jeruk</h3>
-          <p>
-            Perpaduan sempurna limun dengan jeruk segar yang menggugah selera
-          </p>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="images/produk oriental kopi.jpeg"
+              alt="Produk Oriental Kopi"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Limun Oriental Kopi</h5>
+              <p class="card-text">
+                Perpaduan sempurna limun dengan jeruk segar yang menggugah
+                selera
+              </p>
+              <span><p>Rp 15.000</p></span>
+            </div>
+          </div>
         </div>
-        <div class="produk-card">
-          <div class="produk-icon">🥤</div>
-          <h3>Paket Hemat</h3>
-          <p>
-            Paket hemat untuk keluarga dengan harga terjangkau dan kualitas
-            terbaik
-          </p>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="images/produk oriental bubblegum.jpeg"
+              alt="Produk Oriental Bubblegum"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Limun Oriental Bubblegum</h5>
+              <p class="card-text">Manis playful, favorit anak muda</p>
+              <span><p>Rp 15.000</p></span>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-warning btn-lg">Lihat detail</button>
       </div>
     </section>
 
-    <!-- Galeri -->
+    <!-- Galeri Section -->
     <section class="galeri" id="Galeri">
-      <h2>Galeri <span>Kami</span></h2>
-      <div class="galeri-grid">
-        <div class="galeri-item"></div>
-        <div class="galeri-item"></div>
-        <div class="galeri-item"></div>
-        <div class="galeri-item"></div>
-        <div class="galeri-item"></div>
-        <div class="galeri-item"></div>
+      <h2 class="text-center">Galeri <span>Kami</span></h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="galeri-item">
+            <img src="images/pintupabrik.webp" class="img-fluid" />
+            <p class="galeri-judul">Pintu Masuk Pabrik</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="galeri-item">
+            <img src="images/tumpukanbtl.webp" class="img-fluid" />
+            <p class="galeri-judul">Tumpukan Botol</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="galeri-item">
+            <img src="images/prosesrendam.webp" class="img-fluid" />
+            <p class="galeri-judul">Perendaman Botol</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Kontak -->
-    <section class="kontak" id="Kontak">
-      <h2>Hubungi <span>Kami</span></h2>
-      <div class="kontak-container">
-        <div class="kontak-info">
-          <div class="kontak-item">
-            <i data-feather="map-pin"></i>
-            <div>
-              <h3>Alamat</h3>
-              <p>Jl. Raya Pekalongan No. 123<br />Pekalongan, Jawa Tengah</p>
-            </div>
+    <!-- Testimoni Section -->
+    <section class="testimoni" id="testimoni">
+      <h2 class="text-center">Kata Mereka tentang Oriental</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="testimoni-card">
+            <p>
+              "Rasanya nggak berubah dari dulu, setiap lebaran pasti stok
+              Oriental di rumah."
+            </p>
+            <h3>Ibu Rina, Pekalongan</h3>
           </div>
-          <div class="kontak-item">
-            <i data-feather="phone"></i>
-            <div>
-              <h3>Telepon</h3>
-              <p>+62 812-3456-7890</p>
-            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimoni-card">
+            <p>
+              "Seger banget, apalagi diminum dingin pas siang hari. Anak-anak di
+              rumah juga suka."
+            </p>
+            <h3>Pak Budi, Tegal</h3>
           </div>
-          <div class="kontak-item">
-            <i data-feather="mail"></i>
-            <div>
-              <h3>Email</h3>
-              <p>info@orientalcapnyonya.com</p>
-            </div>
-          </div>
-          <div class="kontak-item">
-            <i data-feather="clock"></i>
-            <div>
-              <h3>Jam Operasional</h3>
-              <p>Senin - Sabtu: 08:00 - 17:00<br />Minggu: Tutup</p>
-            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimoni-card">
+            <p>
+              "Varian rasanya banyak, jadi tiap acara selalu sedia Oriental buat
+              tamu."
+            </p>
+            <h3>Mbak Sari, Semarang</h3>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="text-center">
       <p>&copy; 2025 Oriental Cap Nyonya. All Rights Reserved.</p>
       <div class="social-links">
         <a href="#"><i data-feather="instagram"></i></a>
@@ -169,7 +214,6 @@
       </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
   </body>
 </html>
